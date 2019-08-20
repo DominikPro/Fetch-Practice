@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     const users = this.state.users;
     return (
-      <div>
+      <div className="conteiner">
         <ButtonFetchUsers click={this.handleDataFetch} />
         {users ? <UserList users={users} /> : users}
       </div>
