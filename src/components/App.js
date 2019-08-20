@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import UserList from "./UserList";
 import ButtonFetchUsers from "./ButtonFetchUsers";
-
-const API = "https://randomuser.me/api/?results=5";
+const API = "https://randomuser.me/api/?results=1";
 
 class App extends Component {
   state = {
