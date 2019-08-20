@@ -6,7 +6,7 @@ const API = "https://randomuser.me/api/?results=1";
 
 class App extends Component {
   state = {
-    users: null
+    users: []
   };
   handleDataFetch = () => {
     fetch(API)
@@ -19,10 +19,11 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(dataresponse => {
-        // console.log(data);
-        this.setState({
-          users: dataresponse.results
-        });
+        const user = dataresponse.results;
+
+        this.setState(prevState => ({
+          users: prevState.users.concat(user)
+        }));
       })
       .catch(error => console.log(error + " - Przyczyna błędu"));
   };
@@ -32,7 +33,7 @@ class App extends Component {
     return (
       <div className="conteiner">
         <ButtonFetchUsers click={this.handleDataFetch} />
-        {users ? <UserList users={users} /> : users}
+        {users.length > 0 ? <UserList users={users} /> : users}
       </div>
     );
   }
