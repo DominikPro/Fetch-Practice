@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import UserList from "./UserList";
 import ButtonFetchUsers from "./ButtonFetchUsers";
+import ButtonRemoveUsers from "./ButtonRemoveUsers";
 const API = "https://randomuser.me/api/?results=1";
 
 class App extends Component {
@@ -27,11 +28,17 @@ class App extends Component {
       })
       .catch(error => console.log(error + " - Przyczyna błędu"));
   };
+  handleRemoveUser = () => {
+    this.setState({
+      users: []
+    });
+  };
 
   render() {
     const users = this.state.users;
     return (
       <div className="conteiner">
+        <ButtonRemoveUsers click={this.handleRemoveUser} />
         <ButtonFetchUsers click={this.handleDataFetch} />
         {users.length > 0 ? <UserList users={users} /> : users}
       </div>

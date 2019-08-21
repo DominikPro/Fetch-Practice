@@ -1,20 +1,21 @@
 import React from "react";
-const ButtonFetchUsers = props => {
+
+const ButtonRemoveUsers = props => {
   return (
-    <div>
+    <>
       <button
+        onClick={props.click}
         style={{
           padding: "10px 20px",
           borderRadius: "5px",
-          border: "2px solid green",
+          border: "2px solid red",
           backgroundColor: "white"
         }}
-        onClick={props.click}
       >
-        Dodaj użytkownika
+        Usuń użytkowników
       </button>
-    </div>
+    </>
   );
 };
 
-export default ButtonFetchUsers;
+export default ButtonRemoveUsers;

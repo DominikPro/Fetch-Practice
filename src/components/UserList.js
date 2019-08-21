@@ -9,7 +9,6 @@ const UserList = props => {
       <p>{user.email}</p>
     </div>
   ));
-  console.log(users);
 
   return <div>{users}</div>;
 };
