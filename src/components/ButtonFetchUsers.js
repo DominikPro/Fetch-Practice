@@ -1,7 +1,7 @@
 import React from "react";
 const ButtonFetchUsers = props => {
   return (
-    <div>
+    <>
       <button
         style={{
           padding: "10px 20px",
@@ -13,7 +13,7 @@ const ButtonFetchUsers = props => {
       >
         Dodaj użytkownika
       </button>
-    </div>
+    </>
   );
 };
 
